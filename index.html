@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>rsschool-cv-html</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="user-name">Max Balashov</h1>
+    <h2 class="position-title">Frontend Developer</h2>
+    <section class="contacts">
+        <h2 class="title">Contacts</h2>
+        <span class="contects__title">Email</span>
+        <a class="contacts__link" href="mailto:maxballashov@gmail.com">maxballashov@gmail.com</a><br>
+        <span class="contects__title">GitHub</span>
+        <a class="contacts__link" href="https://github.com/refvds">@refds</a><br>
+        <span class="contects__title">LinkedIn</span>
+        <a class="contacts__link" href="https://www.linkedin.com/in/max-balashov/">Max Balashov</a>
+    </section>
+    <section class="profile">
+        <h2 class="title">Profile</h2>
+        <p class="profile__description">
+            I am a frontend developer, inspired
+            by web technologies and their development. I've done several non commercial projects on React technology,
+            including a blog, a social network, and a pizzeria. Really like the e-learning industry, as well as any LMS
+            system I'd like to work on in the future.
+
+        </p>
+    </section>
+    <section class="skills">
+        <h2 class="title">Skills</h2>
+        <ul class="list">
+            <li class="list__item">JavaScript / Typescript</li>
+            <li class="list__item">HTML / CSS (SASS, BEM-naming)</li>
+            <li class="list__item">Bundlers and task runners (gulp / webpack / vite)</li>
+            <li class="list__item">React / Redux / Zustand</li>
+            <li class="list__item">Backend (nodejs, nestjs)</li>
+        </ul>
+    </section>
+    <section class="code-example">
+        <h2 class="title">Code example</h2>
+        <p class="code-example__description">Given a string s, find the length of the longest
+            substring without repeating characters</p>
+        <code class="code-example__code__example">
+            Input: s = "abcabcbb"<br>
+            Output: 3 <br>
+            Explanation: The answer is "abc", with the length of 3.<br>
+        </code><br>
+        <code class="code-example__code__example">
+            Input: s = "bbbbb" <br>
+            Output: 1<br>
+            Explanation: The answer is "b", with the length of 1.<br>
+        </code><br>
+        <code class="code-example__code__example">
+            Input: s = "pwwkew"<br>
+            Output: 3 <br>
+            Explanation: The answer is "wke", with the length of 3. <br>
+            Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.<br>
+        </code><br>
+        <div>
+            <code class="code-example__code__solution">
+                const lengthOfLongestSubstring = function(s) {<br>
+                const chars = new Set();<br>
+                let left = 0;<br>
+                let count = 0;<br>
+                <br>
+                for (let right = 0; right &lt; s.length; right++) {<br>
+                    while (chars.has(s[right])) {<br>
+                        chars.delete(s[left]);<br>
+                        left++;
+                    }<br>
+                    chars.add(s[right]);<br>
+                    count = Math.max(count, right - left + 1);<br>
+                }<br>
+                return count;<br>
+                };
+            </code>
+        </div>
+    </section>
+    <section class="education">
+        <h2 class="title">Education</h2>
+        <p class="education__description">Belarusian State University of Informatics and Radio electronics (BSUIR) -
+            Bachelor's degree [2018 - 2022]</p>
+        <span class="education__graduated-title">System Engineer.</span>
+    </section>
+    <section class="languages">
+        <h2 class="title">Languages</h2>
+        <ul class="list">
+            <li class="list__item">Belarusian - native level</li>
+            <li class="list__item">Russian - native level</li>
+            <li class="list__item">English - pre-intermediate</li>
+        </ul>
+    </section>
+</body>
+</html>
